@@ -29,7 +29,6 @@ public class Principal extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
@@ -37,8 +36,6 @@ public class Principal extends javax.swing.JPanel {
         jLabel1.setText("Restaurant");
 
         jButton1.setText("Cliente");
-
-        jButton2.setText("Mesa");
 
         jButton3.setText("Menu");
 
@@ -58,11 +55,8 @@ public class Principal extends javax.swing.JPanel {
                 .addGap(110, 110, 110)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton4)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addGap(110, 110, 110)
-                        .addComponent(jButton2)))
-                .addGap(336, 336, 336))
+                    .addComponent(jButton3))
+                .addGap(489, 489, 489))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -71,7 +65,6 @@ public class Principal extends javax.swing.JPanel {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
                     .addComponent(jButton3)
                     .addComponent(jButton1))
                 .addGap(47, 47, 47)
@@ -83,7 +76,6 @@ public class Principal extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
