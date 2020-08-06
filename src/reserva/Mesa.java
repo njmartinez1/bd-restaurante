@@ -54,6 +54,12 @@ public class Mesa extends javax.swing.JFrame {
         jlab_ubicacion.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jlab_ubicacion.setText("Ubicacion");
 
+        jtxt_cantpersonas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxt_cantpersonasActionPerformed(evt);
+            }
+        });
+
         jtxt_ubicacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtxt_ubicacionActionPerformed(evt);
@@ -150,6 +156,10 @@ this.dispose();        // TODO add your handling code here:
         }
         JOptionPane.showMessageDialog(null,"El alumno se a registrado correctamente");
     }//GEN-LAST:event_jbtn_guardarmesActionPerformed
+
+    private void jtxt_cantpersonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_cantpersonasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxt_cantpersonasActionPerformed
 
     /**
      * @param args the command line arguments

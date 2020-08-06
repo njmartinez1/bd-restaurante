@@ -97,6 +97,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtxt_cantpersonas">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtxt_cantpersonasActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jtxt_ubicacion">
       <Events>

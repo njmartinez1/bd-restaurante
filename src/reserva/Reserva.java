@@ -83,8 +83,6 @@ public class Reserva extends javax.swing.JFrame {
         jlab_numero_personas1 = new javax.swing.JLabel();
         jlab_numero_personas2 = new javax.swing.JLabel();
         txtMesaDisponible = new javax.swing.JTextField();
-        jlab_numero_personas3 = new javax.swing.JLabel();
-        txtNumReserva = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -115,6 +113,12 @@ public class Reserva extends javax.swing.JFrame {
         jlab_fecha.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jlab_fecha.setText("Fecha");
 
+        jtxt_numero_personas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxt_numero_personasActionPerformed(evt);
+            }
+        });
+
         jtxt_fecha.setText("año/mes/dia");
 
         tblCedulas.setModel(new javax.swing.table.DefaultTableModel(
@@ -137,14 +141,17 @@ public class Reserva extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tblMesas);
 
+        txtCedulaDisponible.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCedulaDisponibleActionPerformed(evt);
+            }
+        });
+
         jlab_numero_personas1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jlab_numero_personas1.setText("Ingrese una cedula disponible:");
 
         jlab_numero_personas2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jlab_numero_personas2.setText("Ingrese una mesa disponible:");
-
-        jlab_numero_personas3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jlab_numero_personas3.setText("Numero de reserva:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -174,11 +181,9 @@ public class Reserva extends javax.swing.JFrame {
                                         .addComponent(jlab_numero_personas2)
                                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(txtMesaDisponible, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addComponent(jlab_numero_personas3, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(txtNumReserva, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jlab_numero_personas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jlab_numero_personas, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jlab_fecha, javax.swing.GroupLayout.Alignment.LEADING))
                                     .addGap(52, 52, 52)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -191,11 +196,7 @@ public class Reserva extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(jlab_reserva)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                .addComponent(jlab_numero_personas3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNumReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtxt_numero_personas, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlab_numero_personas))
@@ -242,7 +243,7 @@ this.dispose();        // TODO add your handling code here:
             con=DriverManager.getConnection("jdbc:mysql://192.168.130.130/proyecto1reserva","alumno","remoto");
             System.out.println("Base de datos conectada");
             Statement stmt=con.createStatement();
-            stmt.executeUpdate("INSERT INTO reserva VALUES('"+txtNumReserva.getText()+"','"+txtCedulaDisponible.getText()+"','"+jtxt_numero_personas.getText()+"','"+jtxt_fecha.getText()+"','"+txtMesaDisponible.getText()+"')");
+            stmt.executeUpdate("INSERT INTO reserva VALUES('"+txtCedulaDisponible.getText()+"','"+jtxt_numero_personas.getText()+"','"+jtxt_fecha.getText()+"','"+txtMesaDisponible.getText()+"')");
             System.out.println("Registrado correctamente");
         } catch (ClassNotFoundException ex) {
             System.out.println(ex.getException());
@@ -250,8 +251,18 @@ this.dispose();        // TODO add your handling code here:
         catch(SQLException ex){
             System.out.println(ex.getMessage());
         }
+        
+
         JOptionPane.showMessageDialog(null,"La reserva se a registrado correctamente");
     }//GEN-LAST:event_jbtn_guardarresActionPerformed
+
+    private void txtCedulaDisponibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaDisponibleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCedulaDisponibleActionPerformed
+
+    private void jtxt_numero_personasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_numero_personasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxt_numero_personasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -300,7 +311,6 @@ this.dispose();        // TODO add your handling code here:
     private javax.swing.JLabel jlab_numero_personas;
     private javax.swing.JLabel jlab_numero_personas1;
     private javax.swing.JLabel jlab_numero_personas2;
-    private javax.swing.JLabel jlab_numero_personas3;
     private javax.swing.JLabel jlab_reserva;
     private javax.swing.JTextField jtxt_fecha;
     private javax.swing.JTextField jtxt_numero_personas;
@@ -308,6 +318,5 @@ this.dispose();        // TODO add your handling code here:
     private javax.swing.JTable tblMesas;
     private javax.swing.JTextField txtCedulaDisponible;
     private javax.swing.JTextField txtMesaDisponible;
-    private javax.swing.JTextField txtNumReserva;
     // End of variables declaration//GEN-END:variables
 }
